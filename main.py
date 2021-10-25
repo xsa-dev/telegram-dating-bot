@@ -28,7 +28,7 @@ def init_bot(config, lang, token):
     dp.add_error_handler(error)
 
     # Start broadcasting thread
-    #bc.start()
+    # bc.start()
 
     # Start bot
     updater.start_polling()

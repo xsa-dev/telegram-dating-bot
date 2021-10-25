@@ -94,7 +94,9 @@ class Handler:
         # Write description
         elif status == 'write_desc':
             db.updateUserData(uid, 'desc', str(update.message.text))
-            db.updateUserDatalogger = logging.getLogger(__name__)
+            db.updateUserData(uid, 'dialog_status', 'write_contact')
+            bot.sendMessage(cid, self.lang['write_p_sex'], reply_markup=self.markup['sexChoice'])
+
         # Write contacts
         elif status == 'write_contact':
             db.updateUserData(uid, 'contact', str(update.message.text))

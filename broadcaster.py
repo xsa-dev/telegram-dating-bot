@@ -2,6 +2,7 @@ from telegram import Bot
 import threading
 
 class Broadcaster(threading.Thread):
+    # TODO: documentation ...
     def __init__(self, db, bot):
         self.db = db
         self.bot = bot
