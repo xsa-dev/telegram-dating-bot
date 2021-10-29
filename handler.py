@@ -56,6 +56,11 @@ class Handler:
         status = user['dialog_status']
 
         # Enter username
+        if status == 'set_lang':
+            
+            db.updateUserData(int(uid), 'dialog_status', 'write_name')
+
+
         if status == 'write_name':
             if self.valr.validName(update.message.text):
                 db.updateUserData(uid, 'name', str(update.message.text).strip())

@@ -5,6 +5,8 @@ from database import Database
 from handler import Handler
 from broadcaster import Broadcaster
 from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackQueryHandler, Filters
+from telegram import ReplyKeyboardMarkup, KeyboardButton, Bot, Update
+
 
 def init_bot(config, lang, token):
     global db
@@ -49,7 +51,8 @@ def start(bot, update):
     # Else register him
     else:
         db.addUser({'id': int(uid), 'chat_id': int(cid), 'dialog_status': 'start', 'liked': [], 'disliked': []})
-        bot.sendMessage(update.message.chat_id, handler.getLang()['greeting_new'])
+        # TODO: для каждого языкого файла нужно заполнять клавиатуру
+        bot.sendMessage(update.message.chat_id, handler.getLang()['answer_lang'], reply_markup = ReplyKeyboardMarkup([[KeyboardButton(handler.getLang()['ru'])], [KeyboardButton(handler.getLang()['eng'])]]))
         db.updateUserData(int(uid), 'dialog_status', 'write_name')
 
 
