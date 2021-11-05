@@ -10,7 +10,9 @@ class Broadcaster(threading.Thread):
     def run(self):
         print('Broadcasting thread started')
 
+    # рассылка по пользователям
     def broadcast(self, text):
         ids = self.db.getChatIDs()
         for i in range(len(ids)):
+            print(ids[i])
             self.bot.sendMessage(ids[i], text)

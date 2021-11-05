@@ -1,3 +1,5 @@
+# Класс для валидаций
+
 class Validator:
     def validName(self, name):
         # name or not name?
@@ -6,7 +8,7 @@ class Validator:
         return False
     
     def validPhoto(self, photo):
-        # chech foto validation
+        # check foto validation
         # TODO: human or fallos?
         return True
     
@@ -19,6 +21,17 @@ class Validator:
             return False
         except:
             return False
+            
+    def validLang(self, lang):
+        # supported languages
+        try:
+            if lang.lower() == 'russian' or lang.lower() == 'english' or lang.lower() == 'chinesian':
+                return True
+            else:
+                return False
+        except:
+            return False
+        
 
     def checkPartner(self, user, partner):
         # функция метчинга партнёров
