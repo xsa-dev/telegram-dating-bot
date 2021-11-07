@@ -72,16 +72,16 @@ class Handler:
         temp_lang = self.lang
             
         if user_lang_code == self.lang['russian']:
-            print('Твой язык русский.')
             self.lang = temp_lang['ru']
-            
+            print('Твой язык русский.')
+
         elif user_lang_code == self.lang['english']:
             self.lang = temp_lang['en']
             print('Твой язык английский.')
 
         elif user_lang_code == self.lang['chinesian']:
-            print('Твой язык китайский')
             self.lang == temp_lang['cn']
+            print('Твой язык китайский')
 
         self.lang['ru'] = temp_lang['ru']
         self.lang['en'] = temp_lang['en']
@@ -275,7 +275,7 @@ class Handler:
                 mutually = db.addLiked(uid, bot, update)
                 # если взаимно не пусто
                 if mutually != None:
-                    bot.sendMessage(uid, self.lang['mutually'] % (mutually['contact'], self.lang['menu_continue']) , reply_markup=None)
+                    bot.sendMessage(uid, self.lang['mutually'] % (mutually['contact'], self.lang['menu_continue']) , reply_markup=self.markup['mainMenu'])
                 # 
                 else:
                     self.printNext(db, bot, update)

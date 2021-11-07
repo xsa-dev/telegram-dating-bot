@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import logging
 import yaml
 import codecs
@@ -67,7 +69,7 @@ def set_lang(bot, update):
                     [
                         KeyboardButton(handler.getLang()['ru']['russian']), 
                         KeyboardButton(handler.getLang()['ru']['english']),
-                        KeyboardButton(handler.getLang()['ru']['chinesian'])
+                        # KeyboardButton(handler.getLang()['ru']['chinesian'])
                     ]
                 ],
                 resize_keyboard=True, 

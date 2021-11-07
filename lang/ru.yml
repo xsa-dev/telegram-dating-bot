@@ -3,6 +3,7 @@ english: "english"
 chinesian: "chinesian"
 
 lang_code: "ru"
+for_partners: "Ты можешь пригласить и заработать синие сердца, вот ссылка для приглашений: %s"
 accept: "Подтверждаю."
 valid_lang: "Окей. Будем общаться на русском."
 not_valid_lang: "Я не понимаю тебя. Укажи правильно язык."
